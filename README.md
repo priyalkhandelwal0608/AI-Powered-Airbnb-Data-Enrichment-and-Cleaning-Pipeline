@@ -1,28 +1,32 @@
-#  NYC Airbnb ETL Pipeline & Dashboard
+#  ETL pipeline using DuckDB 
 
-This project demonstrates an **ETL pipeline** for the NYC Airbnb dataset using **DuckDB**, along with an interactive **Streamlit dashboard** to explore listings data.
+##  Overview
+This project demonstrates a complete **ETL (Extract, Transform, Load) pipeline** built using **Python and DuckDB**, along with an **interactive dashboard** developed in **Streamlit**.  
+
+The application allows users to upload Airbnb listing data, perform data cleaning and transformation, and explore insights through dynamic visualizations.
 
 ---
 
 ##  Features
 
-- **ETL Pipeline** with DuckDB:
-  - Reads raw CSV data (`AB_NYC_2019.csv`)
-  - Creates a DuckDB database (`airbnb.duckdb`)
-  - Cleans data (e.g., replaces missing `reviews_per_month` with 0)
-  - Ensures fast, SQL-based processing
-
-- **Streamlit Dashboard**:
-  - Displays total listings, average price, and average reviews
-  - Filter by borough (`neighbourhood_group`)
-  - Interactive map of listings
-  - Preview raw data table (top 100 rows)
+-  End-to-end ETL pipeline (Extract → Validate → Clean → Transform → Load)
+-  Data validation (handling nulls, filtering invalid values)
+-  Data cleaning (duplicate removal, column pruning)
+-  Feature engineering (price categorization)
+-  Interactive dashboard with filters and sliders
+-  Real-time visualizations using Plotly
+-  Download cleaned and filtered dataset as CSV
+-  Optimized performance using Streamlit session state
+-  In-memory DuckDB (no file lock issues)
 
 ---
 
+##  Tech Stack
+
+- **Python**
+- **DuckDB**
+- **Streamlit**
+- **Pandas**
+- **Plotly**
 
 
-##  Installation and run
-- pip install -r requirements.txt
-- python etl_pipeline.py
-- streamlit run dashboard.py
